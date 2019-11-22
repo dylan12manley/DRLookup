@@ -10,13 +10,20 @@ $(document).ready(function() {
 
     const docName = $('#docName').val();
     $('#docName').val("");
+    // const docName = $('#condition').val();
+    // $('#condition').val("");
+
     (async () => {
       let doctorService = new DoctorService();
-      const response = await doctorService.getDoctor(condition);
+      const response = await doctorService.getDoctor(docName);
       getDoctorElements(response);
     })();
     function getDoctorElements(response) {
-      $('#showDrAddress').attr('src', response.data);
+      console.log(response.data[0].profile.last_name);
+      $('#showDrName').text(`Dr. ${response.data[0].profile.last_name}`).val();
+      $('#showDrFirstName').text(`Dr. ${response.data[0].profile.first_name}`).val();
+      $('#showDrAddress').text(`${response.data[0].profile.address}`).val();
+      // $('').attr('src', response.data[0].profile.last_name);
       // $("body").css("background-image", `url(${url})`);
     }
 
