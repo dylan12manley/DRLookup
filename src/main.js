@@ -8,15 +8,15 @@ $(document).ready(function() {
   $('form#userInput').submit(function() {
     event.preventDefault();
 
-    const condition = $('#condition').val();
-    $('#condition').val("");
+    const docName = $('#docName').val();
+    $('#docName').val("");
     (async () => {
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctor(condition);
       getDoctorElements(response);
     })();
     function getDoctorElements(response) {
-      $('#showDrAddress').attr('src', response.data[randomNumber].images.original.url);
+      $('#showDrAddress').attr('src', response.data);
       // $("body").css("background-image", `url(${url})`);
     }
 
