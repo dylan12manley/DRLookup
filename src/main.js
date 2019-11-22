@@ -8,15 +8,14 @@ $(document).ready(function() {
   $('form#userInput').submit(function() {
     event.preventDefault();
 
-    const searchKeyword = $('#searchKeyword').val();
-    $('#searchKeyword').val("");
+    const condition = $('#condition').val();
+    $('#condition').val("");
     (async () => {
       let doctorService = new DoctorService();
-      const response = await doctorService.getDoctor(searchKeyword);
+      const response = await doctorService.getDoctor(condition);
       getDoctorElements(response);
     })();
     function getDoctorElements(response) {
-      const url = response[randomNumberTwo].urls.regular;
       // $('#showGif').attr('src', response.data[randomNumber].images.original.url);
       // $("body").css("background-image", `url(${url})`);
     }
