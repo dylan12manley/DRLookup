@@ -8,12 +8,13 @@ $(document).ready(function() {
   $('form#userInput').submit(function() {
     event.preventDefault();
 
+    const searchKeyword = $('#searchKeyword').val();
+    $('#searchKeyword').val("");
     (async () => {
       let doctorService = new DoctorService();
       const response = await doctorService.getDoctor(searchKeyword);
       getDoctorElements(response);
     })();
-
     function getDoctorElements(response) {
       const url = response[randomNumberTwo].urls.regular;
       // $('#showGif').attr('src', response.data[randomNumber].images.original.url);
