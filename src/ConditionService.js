@@ -1,7 +1,7 @@
 export class ConditionService {
-  async getDoctor(koanNumber) {
+  async getCondition(condition) {
     try {
-      let response = await fetch(`https://api.betterdoctor.com/2016-03-01/doctors?name=${searchKeyword}&sort=rating-asc&limit=20&user_key=${process.env.API_KEY}`);
+      let response = await fetch(`https://api.betterdoctor.com/2016-03-01/doctors?name=${condition}&sort=rating-asc&limit=20&user_key=${process.env.API_KEY}`);
       let jsonifiedResponse = await response.json();
       console.log(jsonifiedResponse);
       return jsonifiedResponse;
