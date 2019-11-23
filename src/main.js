@@ -20,16 +20,16 @@ $(document).ready(function() {
     })();
     function getDoctorElements(response) {
       $("#results").show()
-      console.log(response.data[0].practices.name);
-      $('#showDrName').html(`Dr. ${response.data[0].profile.last_name} <br>`).val();
-      console.log(response.data[0].profile);
+      console.log(response.data[0]);
+      $('#showDrName').html(`${response.data[0].profile.last_name} <br>`).val();
+      // $('#showDrFirstName').text(`Dr. ${response.data[0].profile.first_name}`).val();
+      // console.log(response.data[0].profile);
+      // $('#showDrAddress').text(`${response.data[0].profile.address}`).val();
       $('#showDrName').html(`Dr. ${response.data[0].profile.last_name} <br>`).val();
       $('#showDr2Name').html(`Dr. ${response.data[1].profile.last_name} <br>`).val();
       $('#showDr3Name').html(`Dr. ${response.data[2].profile.last_name} <br>`).val();
       $('#showDr4Name').html(`Dr. ${response.data[3].profile.last_name} <br>`).val();
       $('#showDr5Name').html(`Dr. ${response.data[4].profile.last_name} <br>`).val();
-      // $('#showDrFirstName').text(`${response.data[0].profile.first_name}`).val();
-      // $('#showDrAddress').text(`${response.data[0].profile.address}`).val();
       // $('').attr('src', response.data[0].profile.last_name);
       // $("body").css("background-image", `url(${url})`);
     }
