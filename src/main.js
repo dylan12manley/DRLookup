@@ -19,8 +19,13 @@ $(document).ready(function() {
     })();
     function getDoctorElements(response) {
       $("#results").show()
-      console.log(response.data[5]);
-      console.log(response.data[0].practices[0].accepts_new_patients);
+      console.log(response.data.length);
+      if (response.data.length === 0){
+        $('#searchFail').html("Your search returned no results").val();
+        $("#results").hide()
+      } else {
+        $('#searchFail').html(" ").val();
+      }
       $('#showDrFirstName').html("Dr."+" "+`${response.data[0].profile.first_name}`+" ").val();
       $('#showDrName').html(`${response.data[0].profile.last_name} <br>`).val();
       $('#showDrPhone').html(`${response.data[0].practices[0].phones[0].number} <br>`).val();
