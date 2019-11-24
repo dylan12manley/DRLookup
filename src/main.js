@@ -19,7 +19,7 @@ $(document).ready(function() {
     })();
     function getDoctorElements(response) {
       $("#results").show()
-      console.log(response.data.length);
+      console.log(response);
       if (response.data.length === 0){
         $('#searchFail').html("Your search returned no results").val();
         $("#results").hide()

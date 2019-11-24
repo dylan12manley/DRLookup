@@ -1,6 +1,6 @@
 # _API Practice_
 
-#### _API Practice, November, 20th, 2019_
+#### _API Practice, November, 22th, 2019_
 
 #### By _**Dylan Manley**_
 
@@ -14,6 +14,10 @@ __
 * _Open your terminal and type "git clone (link)"_
 * _On your terminal enter cd DRLookup_
 * _On your terminal enter npm install_
+* _Create an .env folder on the root directory of the project_
+* _Go to The Better Doctor website at this link: https://developer.betterdoctor.com/signup __
+* _Create a login and follow the website to create your API Key_
+* _Place your API key in the .env file like this: API_KEY =[your API key goes here]_   
 * _On your terminal enter npm run start_
 
 ## Specs
