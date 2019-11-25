@@ -26,11 +26,11 @@ $(document).ready(function() {
       } else {
         $('#searchFail').html(" ").val();
       }
+      // $('showDrWebsite').html(`${response.data[0].practices[0].phones[0].number} <br>`).val();
       $('#showDrFirstName').html("Dr."+" "+`${response.data[0].profile.first_name}`+" ").val();
       $('#showDrName').html(`${response.data[0].profile.last_name} <br>`).val();
       $('#showDrPhone').html(`${response.data[0].practices[0].phones[0].number} <br>`).val();
       $('#showDrAddress').text(`${response.data[0].practices[0].visit_address.street} ${response.data[0].practices[0].visit_address.city} ${response.data[0].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
-      // $('showDrWebsite').html(`${response.data[0].practices[0].phones[0].number} <br>`).val();
       if (response.data[0].practices[0].accepts_new_patients === true) {
         $('#showDrAvaiable').html("Curently accepts new patients").val();
       } else {
@@ -71,6 +71,51 @@ $(document).ready(function() {
         $('#showDr5Avaiable').html("Curently accepts new patients").val();
       } else {
         $('#showDr5Avaiable').html("Curently not accepting new patients").val();
+      }
+      $('#showDr6FirstName').html("Dr."+" "+`${response.data[5].profile.first_name}`+" ").val();
+      $('#showDr6Name').html(`${response.data[5].profile.last_name} <br>`).val();
+      $('#showDr6Phone').html(`${response.data[5].practices[0].phones[0].number} <br>`).val();
+      $('#showDr6Address').text(`${response.data[5].practices[0].visit_address.street} ${response.data[0].practices[0].visit_address.city} ${response.data[5].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
+      if (response.data[5].practices[0].accepts_new_patients === true) {
+        $('#showDr6Avaiable').html("Curently accepts new patients").val();
+      } else {
+        $('#showDr6Avaiable').html("Curently not accepting new patients").val();
+      }
+      $('#showDr7FirstName').html("Dr."+" "+`${response.data[6].profile.first_name}`+" ").val();
+      $('#showDr7Name').html(`${response.data[6].profile.last_name} <br>`).val();
+      $('#showDr7Phone').html(`${response.data[6].practices[0].phones[0].number} <br>`).val();
+      $('#showDr7Address').text(`${response.data[6].practices[0].visit_address.street} ${response.data[0].practices[0].visit_address.city} ${response.data[6].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
+      if (response.data[6].practices[0].accepts_new_patients === true) {
+        $('#showDr7Avaiable').html("Curently accepts new patients").val();
+      } else {
+        $('#showDr7Avaiable').html("Curently not accepting new patients").val();
+      }
+      $('#showDr8FirstName').html("Dr."+" "+`${response.data[7].profile.first_name}`+" ").val();
+      $('#showDr8Name').html(`${response.data[7].profile.last_name} <br>`).val();
+      $('#showDr8Phone').html(`${response.data[7].practices[0].phones[0].number} <br>`).val();
+      $('#showDr8Address').text(`${response.data[7].practices[0].visit_address.street} ${response.data[0].practices[0].visit_address.city} ${response.data[7].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
+      if (response.data[7].practices[0].accepts_new_patients === true) {
+        $('#showDr8Avaiable').html("Curently accepts new patients").val();
+      } else {
+        $('#showDr8Avaiable').html("Curently not accepting new patients").val();
+      }
+      $('#showDr9FirstName').html("Dr."+" "+`${response.data[8].profile.first_name}`+" ").val();
+      $('#showDr9Name').html(`${response.data[8].profile.last_name} <br>`).val();
+      $('#showDr9Phone').html(`${response.data[8].practices[0].phones[0].number} <br>`).val();
+      $('#showDr9Address').text(`${response.data[8].practices[0].visit_address.street} ${response.data[0].practices[0].visit_address.city} ${response.data[8].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
+      if (response.data[8].practices[0].accepts_new_patients === true) {
+        $('#showDr9Avaiable').html("Curently accepts new patients").val();
+      } else {
+        $('#showDr9Avaiable').html("Curently not accepting new patients").val();
+      }
+      $('#showDr10FirstName').html("Dr."+" "+`${response.data[9].profile.first_name}`+" ").val();
+      $('#showDr10Name').html(`${response.data[9].profile.last_name} <br>`).val();
+      $('#showDr10Phone').html(`${response.data[9].practices[0].phones[0].number} <br>`).val();
+      $('#showDr10Address').text(`${response.data[9].practices[0].visit_address.street} ${response.data[0].practices[0].visit_address.city} ${response.data[9].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
+      if (response.data[9].practices[0].accepts_new_patients === true) {
+        $('#showDr10Avaiable').html("Curently accepts new patients").val();
+      } else {
+        $('#showDr10Avaiable').html("Curently not accepting new patients").val();
       }
     }
     // $('#showDrFirstName').text(`Dr. ${response.data[0].profile.first_name}`).val();
