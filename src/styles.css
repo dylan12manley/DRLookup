@@ -1,0 +1,20 @@
+.cardA {
+  padding: 12px;
+  background: rgb(153,58,109);
+  background: linear-gradient(30deg, rgba(153,58,109,1) 0%, rgba(90,0,91,0.9752275910364145) 5%, rgba(210,105,190,0.9808298319327731) 23%, rgba(223,125,125,1) 42%, rgba(242,181,66,1) 89%, rgba(232,39,39,1) 98%);
+}
+.cardB {
+  padding: 12px;
+  background: rgb(153,58,109);
+  background: linear-gradient(2deg, rgba(153,58,109,1) 0%, rgba(90,0,91,0.9752275910364145) 5%, rgba(210,105,190,0.9808298319327731) 23%, rgba(223,125,125,1) 42%, rgba(242,181,66,1) 89%, rgba(232,39,39,1) 98%);
+}
+.cardA2 {
+  padding: 12px;
+  background: rgb(188,129,193);
+  background: linear-gradient(75deg, rgba(188,129,193,1) 0%, rgba(210,105,190,0.9808298319327731) 23%, rgba(223,125,125,1) 42%, rgba(242,181,66,1) 89%, rgba(232,39,39,1) 98%);
+}
+.cardB2 {
+  padding: 12px;
+  background: rgb(188,129,193);
+  background: linear-gradient(255deg, rgba(188,129,193,1) 0%, rgba(210,105,190,0.9808298319327731) 23%, rgba(223,125,125,1) 42%, rgba(242,181,66,1) 89%, rgba(232,39,39,1) 98%);
+}
