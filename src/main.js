@@ -3,12 +3,11 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DoctorService } from './DoctorService.js';
-import { ConditionService } from './ConditionService.js';
+// import { ConditionService } from './ConditionService.js';
 
 $(document).ready(function() {
   $('form#userInput').submit(function() {
     event.preventDefault();
-
     const docName = $('#docName').val();
     $('#docName').val("");
 
@@ -19,12 +18,76 @@ $(document).ready(function() {
     })();
     function getDoctorElements(response) {
       $("#results").show()
-      console.log(response);
       if (response.data.length === 0){
         $('#searchFail').html("Your search returned no results").val();
-        $("#results").hide()
+        $("#results").hide();
       } else {
         $('#searchFail').html(" ").val();
+      }
+      if (response.data.length === 1) {
+        $("#Doctor2").hide();
+        $("#Doctor3").hide();
+        $("#Doctor4").hide();
+        $("#Doctor5").hide();
+        $("#Doctor6").hide();
+        $("#Doctor7").hide();
+        $("#Doctor8").hide();
+      } else if (response.data.length === 2) {
+        $("#Doctor2").show();
+        $("#Doctor3").hide();
+        $("#Doctor4").hide();
+        $("#Doctor5").hide();
+        $("#Doctor6").hide();
+        $("#Doctor7").hide();
+        $("#Doctor8").hide();
+      } else if (response.data.length === 3) {
+        $("#Doctor2").show();
+        $("#Doctor3").show();
+        $("#Doctor4").hide();
+        $("#Doctor5").hide();
+        $("#Doctor6").hide();
+        $("#Doctor7").hide();
+        $("#Doctor8").hide();
+      } else if (response.data.length === 4) {
+        $("#Doctor2").show();
+        $("#Doctor3").show();
+        $("#Doctor4").show();
+        $("#Doctor5").hide();
+        $("#Doctor6").hide();
+        $("#Doctor7").hide();
+        $("#Doctor8").hide();
+      } else if (response.data.length === 5) {
+        $("#Doctor2").show();
+        $("#Doctor3").show();
+        $("#Doctor4").show();
+        $("#Doctor5").show();
+        $("#Doctor6").hide();
+        $("#Doctor7").hide();
+        $("#Doctor8").hide();
+      } else if (response.data.length === 6) {
+        $("#Doctor2").show();
+        $("#Doctor3").show();
+        $("#Doctor4").show();
+        $("#Doctor5").show();
+        $("#Doctor6").show();
+        $("#Doctor7").hide();
+        $("#Doctor8").hide();
+      } else if (response.data.length === 7) {
+        $("#Doctor2").show();
+        $("#Doctor3").show();
+        $("#Doctor4").show();
+        $("#Doctor5").show();
+        $("#Doctor6").show();
+        $("#Doctor7").show();
+        $("#Doctor8").hide();
+      } else {
+        $("#Doctor2").show();
+        $("#Doctor3").show();
+        $("#Doctor4").show();
+        $("#Doctor5").show();
+        $("#Doctor6").show();
+        $("#Doctor7").show();
+        $("#Doctor8").show();
       }
       // $('showDrWebsite').html(`${response.data[0].practices[0].phones[0].number} <br>`).val();
       $('#showDrFirstName').html("Dr."+" "+`${response.data[0].profile.first_name}`+" ").val();
@@ -111,38 +174,20 @@ $(document).ready(function() {
 });
 
 //attempt at wrinting function to search by condition
-
-    // const condition = $('#condition').val();
-    // $('#condition').val("");
-    // (async () => {
-    //   let conditionService = new ConditionService();
-    //   const response = await conditionService.getCondition(condition);
-    //   getConditionElements(response);
-    // })();
-    // function getConditionElements(response) {
-    //   $('#showCondition').attr('src', response.data[0].images.original.url);
-    //   // $("body").css("background-image", `url(${url})`);
-    // }
-
-
-// Code to display 2 more doctors on dom//
-// $('#showDr9FirstName').html("Dr."+" "+`${response.data[8].profile.first_name}`+" ").val();
-// $('#showDr9Name').html(`${response.data[8].profile.last_name} <br>`).val();
-// $('#showDr9Phone').html(`${response.data[8].practices[0].phones[0].number} <br>`).val();
-// $('#showDr9Address').text(`${response.data[8].practices[0].visit_address.street}.`).val();
-// $('#showDr9AddressB').text(`${response.data[0].practices[0].visit_address.city} ${response.data[8].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
-// if (response.data[8].practices[0].accepts_new_patients === true) {
-  //   $('#showDr9Avaiable').html("Curently accepts new patients").val();
-  // } else {
-    //   $('#showDr9Avaiable').html("Curently not accepting new patients").val();
-    // }
-    // $('#showDr10FirstName').html("Dr."+" "+`${response.data[9].profile.first_name}`+" ").val();
-    // $('#showDr10Name').html(`${response.data[9].profile.last_name} <br>`).val();
-    // $('#showDr10Phone').html(`${response.data[9].practices[0].phones[0].number} <br>`).val();
-    // $('#showDr10Address').text(`${response.data[9].practices[0].visit_address.street}.`).val();
-    // $('#showDr10AddressB').text(`${response.data[0].practices[0].visit_address.city} ${response.data[9].practices[0].visit_address.state_long}, ${response.data[0].practices[0].visit_address.zip}`).val();
-    // if (response.data[9].practices[0].accepts_new_patients === true) {
-      //   $('#showDr10Avaiable').html("Curently accepts new patients").val();
-      // } else {
-        //   $('#showDr10Avaiable').html("Curently not accepting new patients").val();
-        // }
+      // setTimeout(function(){
+        // }, 1000);
+      // $('button#conditionSearchBtn').click(function() {
+      // const conditionSearch = $('#condition').val();
+      // $('#condition').val("");
+      // console.log(conditionSearch);
+      //
+      //   (async () => {
+      //       let conditionService = new ConditionService();
+      //       const response = await conditionService.getCondition(conditionSearch);
+      //       getConditionElements(response);
+      //     })();
+      //     function getConditionElements(response) {
+      //         $('#showCondition').attr('src', response.data[0].images.original.url);
+      //         // $("body").css("background-image", `url(${url})`);
+      //       }
+      //     });
