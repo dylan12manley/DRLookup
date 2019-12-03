@@ -3,21 +3,22 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DoctorService } from './DoctorService.js';
-// import { ConditionService } from './ConditionService.js';
 
 $(document).ready(function() {
   $('form#userInput').submit(function() {
     event.preventDefault();
-    const docName = $('#docName').val();
+    const docName = $("input#docName").val();
+    const conditionInput = $("input#condition").val();
     $('#docName').val("");
+    $('#condition').val("");
 
     (async () => {
       let doctorService = new DoctorService();
-      const response = await doctorService.getDoctor(docName);
+      const response = await doctorService.getDoctor(docName, conditionInput);
       getDoctorElements(response);
     })();
     function getDoctorElements(response) {
-      $("#results").show()
+      $("#results").show();
       if (response.data.length === 0){
         $('#searchFail').html("Your search returned no results").val();
         $("#results").hide();
@@ -172,22 +173,3 @@ $(document).ready(function() {
     }
   });
 });
-
-//attempt at wrinting function to search by condition
-      // setTimeout(function(){
-        // }, 1000);
-      // $('button#conditionSearchBtn').click(function() {
-      // const conditionSearch = $('#condition').val();
-      // $('#condition').val("");
-      // console.log(conditionSearch);
-      //
-      //   (async () => {
-      //       let conditionService = new ConditionService();
-      //       const response = await conditionService.getCondition(conditionSearch);
-      //       getConditionElements(response);
-      //     })();
-      //     function getConditionElements(response) {
-      //         $('#showCondition').attr('src', response.data[0].images.original.url);
-      //         // $("body").css("background-image", `url(${url})`);
-      //       }
-      //     });
